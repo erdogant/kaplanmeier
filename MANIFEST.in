@@ -1,0 +1,3 @@
+include versioneer.py
+include bnlearn/_version.py
+include kaplanmeier/data/*.txt
