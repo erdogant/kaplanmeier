@@ -4,7 +4,7 @@
 
 	df  = km.example_data()
 	out = km.fit(time_event, censoring, labx, <optional>)
-	_   = km.plot(out)
+	      km.plot(out)
 
  SEE ALSO
    from lifelines import KaplanMeierFitter, datetimes_to_durations
@@ -338,7 +338,6 @@ def plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6):
     plt.ylim(0,105)
     plt.xlim(0,)
     plt.show()
-
 
 #%% Make class colors
 def make_class_color_names(data, labx, uilabx, cmap):
