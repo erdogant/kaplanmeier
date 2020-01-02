@@ -43,7 +43,7 @@ python setup.py install
 import kaplanmeier as km
 ```
 
-## Example: Structure Learning
+## Example:
 ```python
 df = km.example_data()
 time_event=df['time']
