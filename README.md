@@ -54,7 +54,7 @@ labx=df['group']
 out=km.fit(time_event, censoring, labx)
 ```
 
-# Make figure with cii_alpha=0.05 (default)
+### Make figure with cii_alpha=0.05 (default)
 ```python
 km.plot(out)
 ```
