@@ -1,4 +1,4 @@
-# kaplanmeier - Create survival curves using kaplanmeier, the log-rank test and making plots.
+# kaplanmeier
 
 [![PyPI Version](https://img.shields.io/pypi/v/kaplanmeier)](https://pypi.org/project/kaplanmeier/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/erdogant/kaplanmeier/blob/master/LICENSE)
