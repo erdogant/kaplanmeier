@@ -16,7 +16,7 @@
 
 ## Installation
 * Install kaplanmeier from PyPI (recommended). kaplanmeier is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
-* It is distributed under the MIT license.
+* Distributed under the MIT license.
 
 ## Requirements
 * It is advisable to create a new environment. Pgmpy requires an older version of networkx and matplotlib.
