@@ -3,7 +3,7 @@
 [![PyPI Version](https://img.shields.io/pypi/v/kaplanmeier)](https://pypi.org/project/kaplanmeier/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/erdogant/kaplanmeier/blob/master/LICENSE)
 
-* kaplanmeier is Python package to compute the kaplan meier curves, log-rank test, and make the plot in one go. This work is build on the <a href="https://lifelines.readthedocs.io/en/latest/index.html">lifelines</a> package and contains an easy pipeline.
+* kaplanmeier is Python package to compute the kaplan meier curves, log-rank test, and make the plot instantly. This work is build on the <a href="https://lifelines.readthedocs.io/en/latest/index.html">lifelines</a> package.
 
 ## Contents
 - [Installation](#-installation)
