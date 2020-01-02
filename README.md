@@ -1,9 +1,9 @@
-# kaplanmeier - Create survival curves using kaplanmeier, the log-rank test and making plots.
+# kaplanmeier
 
 [![PyPI Version](https://img.shields.io/pypi/v/kaplanmeier)](https://pypi.org/project/kaplanmeier/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/erdogant/kaplanmeier/blob/master/LICENSE)
 
-* kaplanmeier is Python package to compute the kaplan meier curves, log-rank test, and make the plot in one go. This work is build on the <a href="https://lifelines.readthedocs.io/en/latest/index.html">lifelines</a> package and contains an easy pipeline.
+* kaplanmeier is Python package to compute the kaplan meier curves, log-rank test, and make the plot instantly. This work is build on the <a href="https://lifelines.readthedocs.io/en/latest/index.html">lifelines</a> package.
 
 ## Contents
 - [Installation](#-installation)
@@ -16,7 +16,7 @@
 
 ## Installation
 * Install kaplanmeier from PyPI (recommended). kaplanmeier is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
-* It is distributed under the MIT license.
+* Distributed under the MIT license.
 
 ## Requirements
 * It is advisable to create a new environment. Pgmpy requires an older version of networkx and matplotlib.
@@ -54,7 +54,7 @@ labx=df['group']
 out=km.fit(time_event, censoring, labx)
 ```
 
-# Make figure with cii_alpha=0.05 (default)
+### Make figure with cii_alpha=0.05 (default)
 ```python
 km.plot(out)
 ```
