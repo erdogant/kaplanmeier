@@ -19,7 +19,7 @@
 * Distributed under the MIT license.
 
 ## Requirements
-* It is advisable to create a new environment. Pgmpy requires an older version of networkx and matplotlib.
+* It is advisable to create a new environment.
 ```python
 conda create -n env_KM python=3.6
 conda activate env_KM
