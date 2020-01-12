@@ -31,7 +31,6 @@ pip install matplotlib numpy pandas seaborn lifelines
 ```
 pip install kaplanmeier
 ```
-
 * Alternatively, install kaplanmeier from the GitHub source:
 ```bash
 git clone https://github.com/erdogant/kaplanmeier.git
@@ -39,12 +38,12 @@ cd kaplanmeier
 python setup.py install
 ```  
 
-## Import kaplanmeier package
+#### Import kaplanmeier package
 ```python
 import kaplanmeier as km
 ```
 
-## Example:
+#### Example:
 ```python
 df = km.example_data()
 time_event=df['time']
@@ -55,7 +54,7 @@ labx=df['group']
 out=km.fit(time_event, censoring, labx)
 ```
 
-### Make figure with cii_alpha=0.05 (default)
+#### Make figure with cii_alpha=0.05 (default)
 ```python
 km.plot(out)
 ```
@@ -118,7 +117,7 @@ km.plot(out, cmap='Set2', methodtype='custom')
 [180 rows x 3 columns]
 ```
 
-## Citation
+### Citation
 Please cite kaplanmeier in your publications if this is useful for your research. Here is an example BibTeX entry:
 ```BibTeX
 @misc{erdogant2019kaplanmeier,
@@ -129,14 +128,14 @@ Please cite kaplanmeier in your publications if this is useful for your research
 }
 ```
 
-## References
+### References
 * http://lifelines.readthedocs.io/en/latest/Survival%20analysis%20with%20lifelines.html
    
-## Maintainers
+### Maintainers
 * Erdogan Taskesen, github: [erdogant](https://github.com/erdogant)
 
-## Contribute
+### Contribute
 * All kinds of contributions are welcome!
 
-## © Copyright
+### © Copyright
 See [LICENSE](LICENSE) for details.
