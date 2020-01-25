@@ -4,6 +4,7 @@
 [![PyPI Version](https://img.shields.io/pypi/v/kaplanmeier)](https://pypi.org/project/kaplanmeier/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/erdogant/kaplanmeier/blob/master/LICENSE)
 [![Downloads](https://pepy.tech/badge/kaplanmeier/month)](https://pepy.tech/project/kaplanmeier/month)
+[![Donate Bitcoin](https://img.shields.io/badge/donate-orange.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)
 
 * kaplanmeier is Python package to compute the kaplan meier curves, log-rank test, and make the plot instantly. This work contains some parts of the <a href="https://lifelines.readthedocs.io/en/latest/index.html">lifelines</a> package.
 
@@ -135,8 +136,8 @@ Please cite kaplanmeier in your publications if this is useful for your research
 ### Maintainers
 * Erdogan Taskesen, github: [erdogant](https://github.com/erdogant)
 
-### Contribute
-* All kinds of contributions are welcome!
+### Licence
+* See [LICENSE](LICENSE) for details.
 
-### © Copyright
-See [LICENSE](LICENSE) for details.
+### Donation
+* This work is created and maintained in my free time. If this package is usefull to you and if want to see more like this, you can show your <a href="https://erdogant.github.io/donate/?currency=USD&amount=5">gratitude</a> :) Thanks!
