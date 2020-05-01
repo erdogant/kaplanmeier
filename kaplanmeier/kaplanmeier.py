@@ -57,6 +57,7 @@ def fit(time_event, censoring, labx, verbose=3):
 
     Example
     ----------
+    import kaplanmeier as km
     df= km.example_data()
     out=km.fit(df['time'], df['Died'], df['group'])
     km.plot(out)
