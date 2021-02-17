@@ -79,13 +79,13 @@ def fit(time_event, censoring, labx, verbose=3):
         if verbose<=2: print('[KM] Input data <censoring> must be of type numpy array or list.  Converting now..')
         censoring = censoring.astype(int).values
 
-    out_lr=dict()
-    out_lr['p_value']=None
-    out_lr['test_statistic']=None
+    out_lr={}
+    p_value=np.nan
+    test_statistic=np.nan
 
     # Combine data and gather class labels
     uilabx = np.unique(labx)
-    
+
     # Compute log-rank test between two lines
     if len(uilabx)==2:
         alpha=0.05
@@ -93,11 +93,13 @@ def fit(time_event, censoring, labx, verbose=3):
         class2=labx==uilabx[1]
         # Compute logrank
         out_lr = logrank_test(time_event[class1], time_event[class2], censoring[class1], censoring[class2], alpha=1-alpha)
+        p_value = out_lr.p_value
+        test_statistic = out_lr.test_statistic
 
     # Store
     out = dict()
-    out['logrank_P']=out_lr.p_value
-    out['logrank_Z']=out_lr.test_statistic
+    out['logrank_P']=p_value
+    out['logrank_Z']=test_statistic
     out['logrank']=out_lr
     out['labx']=labx
     out['uilabx']=uilabx
