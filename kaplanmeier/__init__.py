@@ -6,7 +6,7 @@ from kaplanmeier.kaplanmeier import (
 
 __author__ = 'Erdogan Tasksen'
 __email__ = 'erdogant@gmail.com'
-#__version__ = '0.1.0'
+#__version__ = '0.1.1'
 
 # Automatic version control
 from ._version import get_versions
