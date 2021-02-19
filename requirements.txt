@@ -1,4 +1,5 @@
-#conda create -n env_KM python=3.6
-#conda activate env_KM
-pip install matplotlib numpy pandas seaborn lifelines
-#conda install spyder
+matplotlib
+numpy
+pandas
+seaborn
+lifelines

@@ -3,8 +3,8 @@
     import kaplanmeier as km
 
 	df  = km.example_data()
-	out = km.fit(time_event, censoring, labx, <optional>)
-	      km.plot(out)
+	out = km.fit(df['time'], df['Died'], df['group'])
+    km.plot(out)
 
  SEE ALSO
    from lifelines import KaplanMeierFitter, datetimes_to_durations
@@ -62,7 +62,6 @@ def fit(time_event, censoring, labx, verbose=3):
     out=km.fit(df['time'], df['Died'], df['group'])
     km.plot(out)
 
-    km.plot(out, cmap='Set1', savepath='test.png')
     km.plot(out, cmap='Set1', cii_lines=True, cii_alpha=0.05)
     km.plot(out, cmap=[(1, 0, 0),(0, 0, 1)])
     km.plot(out, cmap='Set1', methodtype='custom')
@@ -158,8 +157,8 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
     None.
 
     '''
-    KMcoord  = dict()
-    Param = dict()
+    KMcoord  = {}
+    Param = {}
     Param['width'] = width
     Param['height'] = height
     Param['fontsize'] = fontsize
