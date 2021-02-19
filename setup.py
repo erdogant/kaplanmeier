@@ -1,7 +1,15 @@
 import setuptools
-import versioneer
-new_version='0.1.2'
-# conda install pytorch torchvision
+import re
+
+# versioning ------------
+VERSIONFILE="bnlearn/__init__.py"
+getversion = re.search( r"^__version__ = ['\"]([^'\"]*)['\"]", open(VERSIONFILE, "rt").read(), re.M)
+if getversion:
+    new_version = getversion.group(1)
+else:
+    raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE,))
+
+# Setup ------------
 with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
@@ -9,8 +17,6 @@ setuptools.setup(
      python_requires='>=3',
      name='kaplanmeier',
      version=new_version,
-#     version=versioneer.get_version(),    # VERSION CONTROL
-#     cmdclass=versioneer.get_cmdclass(),  # VERSION CONTROL
      author="Erdogan Taskesen",
      author_email="erdogant@gmail.com",
      description="Create survival curves using kaplanmeier, the log-rank test and making plots.",
