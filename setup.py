@@ -2,7 +2,7 @@ import setuptools
 import re
 
 # versioning ------------
-VERSIONFILE="bnlearn/__init__.py"
+VERSIONFILE="kaplanmeier/__init__.py"
 getversion = re.search( r"^__version__ = ['\"]([^'\"]*)['\"]", open(VERSIONFILE, "rt").read(), re.M)
 if getversion:
     new_version = getversion.group(1)
