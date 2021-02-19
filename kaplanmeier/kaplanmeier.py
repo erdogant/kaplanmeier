@@ -1,5 +1,5 @@
 """ This packages computes the log-rank P-value and computes survival curves based on kaplan meier
-    
+
     import kaplanmeier as km
 
 	df  = km.example_data()
