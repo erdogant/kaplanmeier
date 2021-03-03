@@ -108,7 +108,7 @@ def fit(time_event, censoring, labx, verbose=3):
     return(out)
 
 #%% Make plot
-def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alpha=0.05, cii_lines='dense', methodtype='lifeline'):
+def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alpha=0.05, cii_lines='dense', methodtype='lifeline', title='Survival function'):
     '''
     
 
@@ -181,7 +181,7 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
 #        ax.grid(True)
 #        ax.ylabel('Percentage survival')
         if out['logrank']!=[]:
-            plt.title('Survival function, P=%.5f' %out['logrank_P'])
+            plt.title('%s, Logrank Test P-Value = %.5f' % (title,out['logrank_P']))
 
         # Compute KM survival coordinates per class
         if cii_lines=='dense':
