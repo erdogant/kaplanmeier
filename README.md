@@ -9,7 +9,6 @@
 [![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Downloads](https://pepy.tech/badge/kaplanmeier/month)](https://pepy.tech/project/kaplanmeier/)
 [![Downloads](https://pepy.tech/badge/kaplanmeier)](https://pepy.tech/project/kaplanmeier)
-[![Sphinx](https://img.shields.io/badge/Sphinx-Docs-Green)](https://erdogant.github.io/kaplanmeier/)
 
     Star it if you like it!
 
