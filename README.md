@@ -10,7 +10,6 @@
 [![Downloads](https://pepy.tech/badge/kaplanmeier/month)](https://pepy.tech/project/kaplanmeier/)
 [![Downloads](https://pepy.tech/badge/kaplanmeier)](https://pepy.tech/project/kaplanmeier)
 [![Sphinx](https://img.shields.io/badge/Sphinx-Docs-Green)](https://erdogant.github.io/kaplanmeier/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/erdogant/kaplanmeier/blob/master/notebooks/kaplanmeier.ipynb)
 
     Star it if you like it!
 
