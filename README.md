@@ -1,45 +1,35 @@
-# kaplanmeier
+# kaplanmeier - Python package to compute the kaplan meier curves, log-rank test, and make the plots.
 
 [![Python](https://img.shields.io/pypi/pyversions/kaplanmeier)](https://img.shields.io/pypi/pyversions/kaplanmeier)
 [![PyPI Version](https://img.shields.io/pypi/v/kaplanmeier)](https://pypi.org/project/kaplanmeier/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/erdogant/kaplanmeier/blob/master/LICENSE)
-[![Downloads](https://pepy.tech/badge/kaplanmeier/week)](https://pepy.tech/project/kaplanmeier/week)
-[![Donate](https://img.shields.io/badge/coffee-grey.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)
+[![Coffee](https://img.shields.io/badge/coffee-black-grey.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)
+[![Github Forks](https://img.shields.io/github/forks/erdogant/kaplanmeier.svg)](https://github.com/erdogant/kaplanmeier/network)
+[![GitHub Open Issues](https://img.shields.io/github/issues/erdogant/kaplanmeier.svg)](https://github.com/erdogant/kaplanmeier/issues)
+[![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Downloads](https://pepy.tech/badge/kaplanmeier/month)](https://pepy.tech/project/kaplanmeier/)
+[![Downloads](https://pepy.tech/badge/kaplanmeier)](https://pepy.tech/project/kaplanmeier)
+[![Sphinx](https://img.shields.io/badge/Sphinx-Docs-Green)](https://erdogant.github.io/kaplanmeier/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/erdogant/kaplanmeier/blob/master/notebooks/kaplanmeier.ipynb)
 
-* kaplanmeier is Python package to compute the kaplan meier curves, log-rank test, and make the plot instantly. This work contains some parts of the <a href="https://lifelines.readthedocs.io/en/latest/index.html">lifelines</a> package.
-
-## Contents
-- [Installation](#-installation)
-- [Requirements](#-Requirements)
-- [Quick Start](#-quick-start)
-- [Contribute](#-contribute)
-- [Citation](#-citation)
-- [Maintainers](#-maintainers)
-- [License](#-copyright)
+    Star it if you like it!
 
 ## Installation
 * Install kaplanmeier from PyPI (recommended). kaplanmeier is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
 * Distributed under the MIT license.
 
 ## Requirements
-* New environment can be created as following:
+* Create environment:
 ```python
 conda create -n env_KM python=3.6
 conda activate env_KM
 pip install matplotlib numpy pandas seaborn lifelines
 ```
 
-## Quick Start
+## Installation
 ```
 pip install kaplanmeier
 ```
-* Alternatively, install kaplanmeier from the GitHub source:
-```bash
-git clone https://github.com/erdogant/kaplanmeier.git
-cd kaplanmeier
-python setup.py install
-```  
-
 #### Import kaplanmeier package
 ```python
 import kaplanmeier as km
@@ -130,14 +120,11 @@ Please cite kaplanmeier in your publications if this is useful for your research
 }
 ```
 
-### References
+## References
 * http://lifelines.readthedocs.io/en/latest/Survival%20analysis%20with%20lifelines.html
-   
-### Maintainers
+
+
+### Maintainer
 * Erdogan Taskesen, github: [erdogant](https://github.com/erdogant)
-
-### Licence
-* See [LICENSE](LICENSE) for details.
-
-### Donation
-* This work is created and maintained in my free time. If you wish to buy me a <a href="https://erdogant.github.io/donate/?currency=USD&amount=5">Coffee</a> for this work, it is very appreciated.
+* Contributions are welcome.
+* If you wish to buy me a <a href="https://erdogant.github.io/donate/?currency=USD&amount=5">Coffee</a> for this work, it is very appreciated :)
