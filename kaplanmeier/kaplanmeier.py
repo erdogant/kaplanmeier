@@ -27,6 +27,7 @@ from lifelines.statistics import logrank_test
 from lifelines import KaplanMeierFitter
 from lifelines.plotting import add_at_risk_counts
 from kaplanmeier.helpers.savefig import savefig
+from matplotlib.ticker import PercentFormatter
 
 #%% Main function
 def fit(time_event, censoring, labx, verbose=3):
@@ -108,7 +109,7 @@ def fit(time_event, censoring, labx, verbose=3):
     return(out)
 
 #%% Make plot
-def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alpha=0.05, cii_lines='dense', methodtype='lifeline', title='Survival function'):
+def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alpha=0.05, cii_lines='dense', methodtype='lifeline', title='Survival function', full_ylim=False, y_percentage=False):
     '''
     
 
@@ -180,6 +181,10 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
         ax = fig.add_subplot(111)
 #        ax.grid(True)
 #        ax.ylabel('Percentage survival')
+        if full_ylim:
+            ax.set_ylim([0.0, 1.05])
+        if y_percentage:
+            ax.yaxis.set_major_formatter(PercentFormatter(1.0))
         if out['logrank']!=[]:
             plt.title('%s, Logrank Test P-Value = %.5f' % (title,out['logrank_P']))
 
