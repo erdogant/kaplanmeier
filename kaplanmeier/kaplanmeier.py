@@ -160,8 +160,6 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
         # Startup figure
         fig = plt.figure(figsize=(Param['width'], Param['height']))
         ax = fig.add_subplot(111)
-#        ax.grid(True)
-#        ax.ylabel('Percentage survival')
         if full_ylim:
             ax.set_ylim([0.0, 1.05])
         if y_percentage:
