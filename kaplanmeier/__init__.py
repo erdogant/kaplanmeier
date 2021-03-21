@@ -14,7 +14,7 @@ kaplanmeier - This packages computes the log-rank P-value and computes survival 
 =====================================================================
 
 **kaplanmeier**
-See README.md file for more information.
+See README.md file for mores information.
 
 Example
 ----------
