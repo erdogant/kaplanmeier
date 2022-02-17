@@ -1,4 +1,4 @@
-# kaplanmeier - Python package to compute the kaplan meier curves, log-rank test, and make the plots.
+# kaplanmeier
 
 [![Python](https://img.shields.io/pypi/pyversions/kaplanmeier)](https://img.shields.io/pypi/pyversions/kaplanmeier)
 [![PyPI Version](https://img.shields.io/pypi/v/kaplanmeier)](https://pypi.org/project/kaplanmeier/)
@@ -8,22 +8,16 @@
 [![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Downloads](https://pepy.tech/badge/kaplanmeier/month)](https://pepy.tech/project/kaplanmeier/)
 [![Downloads](https://pepy.tech/badge/kaplanmeier)](https://pepy.tech/project/kaplanmeier)
-[![BuyMeCoffee](https://img.shields.io/badge/buymea-coffee-yellow.svg)](https://www.buymeacoffee.com/erdogant)
+<!---[![BuyMeCoffee](https://img.shields.io/badge/buymea-coffee-yellow.svg)](https://www.buymeacoffee.com/erdogant)-->
 <!---[![Coffee](https://img.shields.io/badge/coffee-black-grey.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)-->
 
-    Star it if you like it!
+``kaplanmeier`` is a Python package to compute the kaplan meier curves, log-rank test, and make the plots.
 
-## Installation
-* Install kaplanmeier from PyPI (recommended). kaplanmeier is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
-* Distributed under the MIT license.
+# 
+**Star this repo if you like it! ⭐️**
+#
 
-## Requirements
-* Create environment:
-```python
-conda create -n env_KM python=3.6
-conda activate env_KM
-pip install matplotlib numpy pandas seaborn lifelines
-```
+
 
 ## Installation
 ```
