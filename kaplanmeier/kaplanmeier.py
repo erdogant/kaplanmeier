@@ -186,28 +186,7 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
             # Store
             kmf_all.append(kmf.fit(out['time_event'][idx], event_observed=out['censoring'][idx], label=classlabel[i], ci_labels=None, alpha=(1 - cii_alpha)))
 
-        if len(kmf_all)==1:
-            add_at_risk_counts(kmf_all[0], ax=ax)
-        elif len(kmf_all)==2:
-            add_at_risk_counts(kmf_all[0], kmf_all[1], ax=ax)
-        elif len(kmf_all)==3:
-            add_at_risk_counts(kmf_all[0], kmf_all[1], kmf_all[2], ax=ax)
-        elif len(kmf_all)==4:
-            add_at_risk_counts(kmf_all[0], kmf_all[1], kmf_all[2], kmf_all[3], ax=ax)
-        elif len(kmf_all)==5:
-            add_at_risk_counts(kmf_all[0], kmf_all[1], kmf_all[2], kmf_all[3], kmf_all[4], ax=ax)
-        elif len(kmf_all)==6:
-            add_at_risk_counts(kmf_all[0], kmf_all[1], kmf_all[2], kmf_all[3], kmf_all[4], kmf_all[5], ax=ax)
-        elif len(kmf_all)==7:
-            add_at_risk_counts(kmf_all[0], kmf_all[1], kmf_all[2], kmf_all[3], kmf_all[4], kmf_all[5], kmf_all[6], ax=ax)
-        elif len(kmf_all)==8:
-            add_at_risk_counts(kmf_all[0], kmf_all[1], kmf_all[2], kmf_all[3], kmf_all[4], kmf_all[5], kmf_all[6], kmf_all[7], ax=ax)
-        elif len(kmf_all)==9:
-            add_at_risk_counts(kmf_all[0], kmf_all[1], kmf_all[2], kmf_all[3], kmf_all[4], kmf_all[5], kmf_all[6], kmf_all[7], kmf_all[8], ax=ax)
-        elif len(kmf_all)==10:
-            add_at_risk_counts(kmf_all[0], kmf_all[1], kmf_all[2], kmf_all[3], kmf_all[4], kmf_all[5], kmf_all[6], kmf_all[7], kmf_all[8], kmf_all[9], ax=ax)
-        else:
-            print('[KM] Maximum of 10 classes is reached.')
+        add_at_risk_counts(*kmf_all, ax=ax)
 
         ax.tick_params(axis='x', length=15, width=1, direction='out', labelsize=Param['fontsize'])
         ax.tick_params(axis='y', length=15, width=1, direction='out', labelsize=Param['fontsize'])
