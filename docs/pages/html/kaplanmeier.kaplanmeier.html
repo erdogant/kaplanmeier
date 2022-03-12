@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API References &mdash; kaplanmeier kaplanmeier documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Coding quality" href="Coding%20quality.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> kaplanmeier
+          </a>
+              <div class="version">
+                0.1.5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html#uninstalling">Uninstalling</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Input/Output</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html">Create kaplanmeier plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html#custom-colormap">Custom colormap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html#change-colormap-and-confidence-intervals">Change colormap and confidence intervals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html#id1">Custom colormap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html#use-custom-kaplanmeier-method">Use custom kaplanmeier method</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Sponsor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html#github">Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coding%20quality.html">Coding quality</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API References</a></li>
+</ul>
+
+    <a href= "genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">kaplanmeier</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>API References</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/kaplanmeier.kaplanmeier.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-kaplanmeier.kaplanmeier">
+<span id="api-references"></span><h1>API References<a class="headerlink" href="#module-kaplanmeier.kaplanmeier" title="Permalink to this headline"></a></h1>
+<p>Compute the log-rank P-value and survival curves based on kaplan meier.</p>
+<p># Name        : kaplanmeier.py
+# Author      : E.Taskesen
+# Date        : July. 2018</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.compute_coord">
+<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">compute_coord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">survtimes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.compute_coord" title="Permalink to this definition"></a></dt>
+<dd><p>Compute coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>survtimes</strong> (<em>TYPE</em>) – DESCRIPTION.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>h_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>v_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>lost</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.example_data">
+<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">example_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.example_data" title="Permalink to this definition"></a></dt>
+<dd><p>Create example data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>df</strong> – DESCRIPTION.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>TYPE</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.fit">
+<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">censoring</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the log-rank P-value and survival curves based on kaplan meier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_event</strong> (<em>Float.</em>) – Numpy array with survival-time in years/months/days (not a datetime!)</p></li>
+<li><p><strong>censoring</strong> (<em>array-like</em>) – numpy array with censoring (1=event, 0=ongoing).
+At the time you want to make inferences about durations, it is possible, likely true, that not all the death events have occured yet.
+In case of patients, you would like to put 1=death as an event.</p></li>
+<li><p><strong>labx</strong> (<em>array-like of type string</em><em> or </em><em>int</em>) – Class labels. Each class label is seperately plotted.</p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>(</em><em>default: 3</em><em>)</em>) – Verbosity messages.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>logrank_P (float) : P-value</p></li>
+<li><p>logrank_Z (float) : Z-score</p></li>
+<li><p>logrank (float) : fitted logrank_test model</p></li>
+<li><p>labx (list) : Class labels</p></li>
+<li><p>uilabx (list) : Unique Class labels</p></li>
+<li><p>time_event (float) : Time to event</p></li>
+<li><p>censoring (bool) : Censored or not</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict()</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import library</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">kaplanmeier</span> <span class="k">as</span> <span class="nn">km</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">example_data</span><span class="p">()</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Fit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Died&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">])</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">cii_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cii_alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">methodtype</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;logrank_P&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;logrank_Z&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.loop">
+<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newsurv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.loop" title="Permalink to this definition"></a></dt>
+<dd><p>Part of computing coordinates (custom implementation).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>newsurv</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>y</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>h_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>v_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>lost</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>newsurv</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>y</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>h_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>v_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>lost</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.make_class_color_names">
+<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">make_class_color_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uilabx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.make_class_color_names" title="Permalink to this definition"></a></dt>
+<dd><p>Create class colors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>labx</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>uilabx</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>cmap</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.plot">
+<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Set1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cii_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cii_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dense'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methodtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lifeline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Survival</span> <span class="pre">function'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_percentage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.plot" title="Permalink to this definition"></a></dt>
+<dd><p>Make plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>out</strong> (<em>dict</em>) – Results from the fit function.</p></li>
+<li><p><strong>fontsize</strong> (<em>int</em><em>, </em><em>optional</em>) – Font size for the graph. The default is 12.</p></li>
+<li><p><strong>savepath</strong> (<em>String</em><em>, </em><em>optional</em>) – Path to store the figure. The default is ‘’.</p></li>
+<li><p><strong>width</strong> (<em>int</em><em>, </em><em>optional</em>) – Width of the figure. The default is 10.</p></li>
+<li><p><strong>height</strong> (<em>int</em><em>, </em><em>optional</em>) – height of the figure. The default is 6.</p></li>
+<li><p><strong>cmap</strong> (<em>String</em><em>, </em><em>optional</em>) – Specify your own colors for each class-label or use a colormap:  <a class="reference external" href="https://matplotlib.org/examples/color/colormaps_reference.html">https://matplotlib.org/examples/color/colormaps_reference.html</a>. The default is ‘Set1’.
+[(1, 0, 0),(0, 0, 1),(..)]
+‘Set1’       (default)
+‘Set2’       Discrete colors
+‘Pastel1’    Discrete colors
+‘Paired’     Discrete colors
+‘rainbow’
+‘bwr’        Blue-white-red
+‘binary’ or ‘binary_r’
+‘seismic’    Blue-white-red
+‘Blues’      white-to-blue
+‘Reds’       white-to-red</p></li>
+<li><p><strong>cii_alpha</strong> (<em>float</em><em>, </em><em>optional</em>) – Confidence interval (works only when methodtype=’lifelines’). The default is 0.05.</p></li>
+<li><p><strong>cii_lines</strong> (<em>String</em><em>, </em><em>optional</em>) – Confidence lines (works only when methodtype=’lifelines’). The default is ‘dense’.
+‘lifelines’ (default)
+‘custom’</p></li>
+<li><p><strong>methodtype</strong> (<em>String</em><em>, </em><em>optional</em>) – <p>Implementation type. The default is ‘lifeline’.
+‘dense’   (dense/filled lines)
+‘line’</p>
+<blockquote>
+<div><p>None  (no lines)</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>title</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is ‘Survival function’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.plotkm">
+<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">plotkm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">KMcoord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uilabx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Set1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.plotkm" title="Permalink to this definition"></a></dt>
+<dd><p>Surival plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>KMcoord</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>uilabx</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
+<li><p><strong>cmap</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is ‘Set1’.</p></li>
+<li><p><strong>fontsize</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is 10.</p></li>
+<li><p><strong>width</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is 10.</p></li>
+<li><p><strong>height</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is 6.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<hr>
+<center>
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEADP27U&placement=erdogantgithubio" id="_carbonads_js"></script>
+</center>
+<hr></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Coding%20quality.html" class="btn btn-neutral float-left" title="Coding quality" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Erdogan Taskesen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
