@@ -6,7 +6,7 @@ from kaplanmeier.kaplanmeier import (
 
 __author__ = 'Erdogan Tasksen'
 __email__ = 'erdogant@gmail.com'
-__version__ = '0.1.5'
+__version__ = '0.1.6'
 
 # module level doc-string
 __doc__ = """
@@ -18,13 +18,23 @@ See README.md file for mores information.
 
 Example
 ----------
+>>> # Import library
 >>> import kaplanmeier as km
+>>>
+>>> # Example data
 >>> df = km.example_data()
->>> out = km.fit(df['time'], df['Died'], df['group'])
->>> km.plot(out)
-
+>>>
+>>> # Fit
+>>> results = km.fit(df['time'], df['Died'], df['group'])
+>>>
+>>> # Plot
+>>> km.plot(results)
+>>>
 >>> km.plot(out, cmap='Set1', cii_lines=True, cii_alpha=0.05)
 >>> km.plot(out, cmap=[(1, 0, 0),(0, 0, 1)])
 >>> km.plot(out, cmap='Set1', methodtype='custom')
+>>>
+>>> results['logrank_P']
+>>> results['logrank_Z']
 
 """
