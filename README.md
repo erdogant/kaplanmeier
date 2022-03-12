@@ -8,113 +8,83 @@
 [![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Downloads](https://pepy.tech/badge/kaplanmeier/month)](https://pepy.tech/project/kaplanmeier/)
 [![Downloads](https://pepy.tech/badge/kaplanmeier)](https://pepy.tech/project/kaplanmeier)
+[![Sphinx](https://img.shields.io/badge/Sphinx-Docs-Green)](https://erdogant.github.io/kaplanmeier/)
 <!---[![BuyMeCoffee](https://img.shields.io/badge/buymea-coffee-yellow.svg)](https://www.buymeacoffee.com/erdogant)-->
 <!---[![Coffee](https://img.shields.io/badge/coffee-black-grey.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)-->
 
 ``kaplanmeier`` is a Python package to compute the kaplan meier curves, log-rank test, and make the plots.
 
+
 # 
-**Star this repo if you like it! ⭐️**
+**⭐️ Star this repo if you like it ⭐️**
 #
 
+#### Install kaplanmeier from PyPI
 
-
-## Installation
-```
+```bash
 pip install kaplanmeier
 ```
+
 #### Import kaplanmeier package
-```python
-import kaplanmeier as km
-```
 
-#### Example:
 ```python
-df = km.example_data()
-time_event=df['time']
-censoring=df['Died'] 
-labx=df['group']
-
-# Compute survival
-out=km.fit(time_event, censoring, labx)
+import kaplanmeier import km
 ```
+# 
 
-#### Make figure with cii_alpha=0.05 (default)
-```python
-km.plot(out)
-```
-<p align="center">
+
+### [Documentation pages](https://erdogant.github.io/kaplanmeier/)
+
+On the [documentation pages](https://erdogant.github.io/kaplanmeier/) you can find detailed information about the working of the ``kaplanmeier`` with many examples. 
+
+<hr> 
+
+### Examples
+
+# 
+
+* [Example: Create Kaplan meier plot](https://erdogant.github.io/kaplanmeier/pages/html/Examples.html)
+
+<p align="left">
+  <a href="https://erdogant.github.io/kaplanmeier/pages/html/Examples.html">
   <img src="https://github.com/erdogant/kaplanmeier/blob/master/docs/figs/fig2.png" width="600" />
+  </a>
 </p>
 
-```python
-km.plot(out, cmap='Set1', cii_lines=None, cii_alpha=0.05)
-```
-<p align="center">
+
+# 
+
+* [Example: Remove the Confidence intervals from plot](https://erdogant.github.io/kaplanmeier/pages/html/Examples.html#custom-colormap)
+
+<p align="left">
+  <a href="https://erdogant.github.io/kaplanmeier/pages/html/Examples.html#custom-colormap">
   <img src="https://github.com/erdogant/kaplanmeier/blob/master/docs/figs/fig1.png" width="600" />
+  </a>
 </p>
 
-```python
-km.plot(out, cmap='Set1', cii_lines='line', cii_alpha=0.05)
-```
-<p align="center">
+
+# 
+
+* [Example: Change colormap and confidence intervals the confidence interval](https://erdogant.github.io/kaplanmeier/pages/html/Examples.html#change-colormap-and-confidence-intervals)
+
+<p align="left">
+  <a href="https://erdogant.github.io/kaplanmeier/pages/html/Examples.html#change-colormap-and-confidence-intervals">
   <img src="https://github.com/erdogant/kaplanmeier/blob/master/docs/figs/fig3.png" width="600" />
+  </a>
 </p>
 
-```python
-km.plot(out, cmap=[(1, 0, 1),(0, 1, 1)])
-```
-<p align="center">
+# 
+
+* [Example: Use custom colormap](https://erdogant.github.io/kaplanmeier/pages/html/Examples.html#id1)
+
+<p align="left">
+  <a href="https://erdogant.github.io/kaplanmeier/pages/html/Examples.html#id1">
   <img src="https://github.com/erdogant/kaplanmeier/blob/master/docs/figs/fig4.png" width="600" />
-</p>
-
-```python
-km.plot(out, cmap='Set2')
-```
-<p align="center">
-  <img src="https://github.com/erdogant/kaplanmeier/blob/master/docs/figs/fig5.png" width="600" />
-</p>
-
-```python
-km.plot(out, cmap='Set2', methodtype='custom')
-```
-<p align="center">
-  <img src="https://github.com/erdogant/kaplanmeier/blob/master/docs/figs/fig6.png" width="600" />
+  </a>
 </p>
 
 
-
-* df looks like this:
-```
-     time  Died  group
-0     485     0      1
-1     526     1      2
-2     588     1      2
-3     997     0      1
-4     426     1      1
-..    ...   ...    ...
-175   183     0      1
-176  3196     0      1
-177   457     1      2
-178  2100     1      1
-179   376     0      1
-
-[180 rows x 3 columns]
-```
-
-### Citation
-Please cite kaplanmeier in your publications if this is useful for your research. Here is an example BibTeX entry:
-```BibTeX
-@misc{erdogant2019kaplanmeier,
-  title={kaplanmeier},
-  author={Erdogan Taskesen},
-  year={2019},
-  howpublished={\url{https://github.com/erdogant/kaplanmeier}},
-}
-```
-
-## References
-* http://lifelines.readthedocs.io/en/latest/Survival%20analysis%20with%20lifelines.html
+<hr>
 
 
 ### Maintainer
