@@ -37,21 +37,35 @@ def fit(time_event, censoring, labx, verbose=3):
 
     Returns
     -------
-    dict: containing logrank pvalue and keys required to make plots.
+    dict()
+        * logrank_P (float) : P-value
+        * logrank_Z (float) : Z-score
+        * logrank (float) : fitted logrank_test model
+        * labx (list) : Class labels
+        * uilabx (list) : Unique Class labels
+        * time_event (float) : Time to event
+        * censoring (bool) : Censored or not
 
     Example
     ----------
-    import kaplanmeier as km
-    df= km.example_data()
-    out=km.fit(df['time'], df['Died'], df['group'])
-    km.plot(out)
-
-    km.plot(out, cmap='Set1', cii_lines=True, cii_alpha=0.05)
-    km.plot(out, cmap=[(1, 0, 0),(0, 0, 1)])
-    km.plot(out, cmap='Set1', methodtype='custom')
-
-    out['logrank_P']
-    out['logrank_Z']
+    >>> # Import library
+    >>> import kaplanmeier as km
+    >>>
+    >>> # Example data
+    >>> df = km.example_data()
+    >>>
+    >>> # Fit
+    >>> results = km.fit(df['time'], df['Died'], df['group'])
+    >>>
+    >>> # Plot
+    >>> km.plot(results)
+    >>>
+    >>> km.plot(out, cmap='Set1', cii_lines=True, cii_alpha=0.05)
+    >>> km.plot(out, cmap=[(1, 0, 0),(0, 0, 1)])
+    >>> km.plot(out, cmap='Set1', methodtype='custom')
+    >>>
+    >>> results['logrank_P']
+    >>> results['logrank_Z']
 
     """
     if 'pandas' in str(type(time_event)):
