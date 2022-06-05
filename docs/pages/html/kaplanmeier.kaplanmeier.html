@@ -30,7 +30,7 @@
             <a href="index.html" class="icon icon-home"> kaplanmeier
           </a>
               <div class="version">
-                0.1.5
+                0.1.6
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,7 +44,7 @@
               <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Installation.html#uninstalling">Uninstalling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html#remove-installation">Remove installation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
@@ -53,9 +53,8 @@
 <p class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Examples.html">Create kaplanmeier plot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Examples.html#custom-colormap">Custom colormap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Examples.html#change-colormap-and-confidence-intervals">Change colormap and confidence intervals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Examples.html#id1">Custom colormap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html#custom-colormap">Custom colormap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Examples.html#use-custom-kaplanmeier-method">Use custom kaplanmeier method</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
@@ -102,19 +101,6 @@
 <dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.compute_coord">
 <span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">compute_coord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">survtimes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.compute_coord" title="Permalink to this definition"></a></dt>
 <dd><p>Compute coordinates.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>survtimes</strong> (<em>TYPE</em>) – DESCRIPTION.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>h_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>v_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>lost</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-</ul>
-</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -162,7 +148,7 @@ In case of patients, you would like to put 1=death as an event.</p></li>
 <dd class="field-odd"><p>dict()</p>
 </dd>
 </dl>
-<p class="rubric">Example</p>
+<p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import library</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">kaplanmeier</span> <span class="k">as</span> <span class="nn">km</span>
 <span class="go">&gt;&gt;&gt;</span>
@@ -175,9 +161,9 @@ In case of patients, you would like to put 1=death as an event.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Plot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 <span class="go">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">cii_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cii_alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">methodtype</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">cii_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cii_alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">methodtype</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">)</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;logrank_P&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;logrank_Z&#39;</span><span class="p">]</span>
@@ -189,46 +175,12 @@ In case of patients, you would like to put 1=death as an event.</p></li>
 <dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.loop">
 <span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newsurv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.loop" title="Permalink to this definition"></a></dt>
 <dd><p>Part of computing coordinates (custom implementation).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>newsurv</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>y</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>h_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>v_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>lost</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>newsurv</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>y</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>h_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>v_coords</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>lost</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-</ul>
-</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.make_class_color_names">
 <span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">make_class_color_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uilabx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.make_class_color_names" title="Permalink to this definition"></a></dt>
 <dd><p>Create class colors.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>labx</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>uilabx</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>cmap</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None.</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -257,7 +209,8 @@ In case of patients, you would like to put 1=death as an event.</p></li>
 ‘Reds’       white-to-red</p></li>
 <li><p><strong>cii_alpha</strong> (<em>float</em><em>, </em><em>optional</em>) – Confidence interval (works only when methodtype=’lifelines’). The default is 0.05.</p></li>
 <li><p><strong>cii_lines</strong> (<em>String</em><em>, </em><em>optional</em>) – Confidence lines (works only when methodtype=’lifelines’). The default is ‘dense’.
-‘lifelines’ (default)
+‘dense’ (default)
+‘lifelines’
 ‘custom’</p></li>
 <li><p><strong>methodtype</strong> (<em>String</em><em>, </em><em>optional</em>) – <p>Implementation type. The default is ‘lifeline’.
 ‘dense’   (dense/filled lines)
@@ -266,34 +219,31 @@ In case of patients, you would like to put 1=death as an event.</p></li>
 <div><p>None  (no lines)</p>
 </div></blockquote>
 </p></li>
-<li><p><strong>title</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is ‘Survival function’.</p></li>
+<li><p><strong>title</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – The default is ‘Survival function’.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>None.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.plotkm">
-<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">plotkm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">KMcoord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uilabx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Set1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.plotkm" title="Permalink to this definition"></a></dt>
-<dd><p>Surival plot.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>KMcoord</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>uilabx</strong> (<em>TYPE</em>) – DESCRIPTION.</p></li>
-<li><p><strong>cmap</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is ‘Set1’.</p></li>
-<li><p><strong>fontsize</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is 10.</p></li>
-<li><p><strong>width</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is 10.</p></li>
-<li><p><strong>height</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – DESCRIPTION. The default is 6.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None.</p>
-</dd>
-</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import library</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">kaplanmeier</span> <span class="k">as</span> <span class="nn">km</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">example_data</span><span class="p">()</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Fit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Died&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">])</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">cii_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cii_alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">methodtype</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <hr>

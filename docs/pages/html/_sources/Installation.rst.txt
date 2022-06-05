@@ -14,21 +14,9 @@ Pypi
     pip install -U kaplanmeier
 
 
-Github source
-************************************
-
-.. code-block:: console
-
-    # Install directly from github
-    pip install git+https://github.com/erdogant/kaplanmeier
-
-
-Uninstalling
-################
-
 
 Remove installation
-**********************
+######################
 
 Note that the removal of the environment will also remove the ``kaplanmeier`` installation.
 

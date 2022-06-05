@@ -50,32 +50,13 @@ In the following example we load the patient dataset and create the kaplanmeier 
 
 
 
-Custom colormap
-############################################
-
-.. code:: python
-	
-	# Plot
-	km.plot(out, cmap='Set1', cii_lines=None, cii_alpha=0.05)
-
-
-.. |fig2| image:: ../figs/fig1.png
-
-.. table:: kaplanmeier plot.
-   :align: center
-
-   +----------+
-   | |fig2|   |
-   +----------+
-
-
 Change colormap and confidence intervals
 ############################################
 
 .. code:: python
 	
 	# Plot
-	km.plot(out, cmap='Set1', cii_lines=None, cii_alpha=0.05)
+	km.plot(results, cmap='Set1', cii_lines='dense', cii_alpha=0.05)
 
 
 .. |fig3| image:: ../figs/fig3.png
@@ -94,7 +75,7 @@ Custom colormap
 .. code:: python
 	
 	# Plot
-	km.plot(out, cmap=[(1, 0, 1),(0, 1, 1)])
+	km.plot(results, cmap=[(1, 0, 1),(0, 1, 1)])
 
 
 .. |fig4| image:: ../figs/fig4.png
@@ -113,7 +94,7 @@ Use custom kaplanmeier method
 .. code:: python
 	
 	# Plot
-	km.plot(out, cmap='Set2', methodtype='custom')
+	km.plot(results, cmap='Set2', methodtype='custom')
 
 
 .. |fig6| image:: ../figs/fig6.png
