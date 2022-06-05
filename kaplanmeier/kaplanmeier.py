@@ -46,7 +46,7 @@ def fit(time_event, censoring, labx, verbose=3):
         * time_event (float) : Time to event
         * censoring (bool) : Censored or not
 
-    Example
+    Examples
     ----------
     >>> # Import library
     >>> import kaplanmeier as km
@@ -60,9 +60,9 @@ def fit(time_event, censoring, labx, verbose=3):
     >>> # Plot
     >>> km.plot(results)
     >>>
-    >>> km.plot(out, cmap='Set1', cii_lines=True, cii_alpha=0.05)
-    >>> km.plot(out, cmap=[(1, 0, 0),(0, 0, 1)])
-    >>> km.plot(out, cmap='Set1', methodtype='custom')
+    >>> km.plot(results, cmap='Set1', cii_lines=True, cii_alpha=0.05)
+    >>> km.plot(results, cmap=[(1, 0, 0),(0, 0, 1)])
+    >>> km.plot(results, cmap='Set1', methodtype='custom')
     >>>
     >>> results['logrank_P']
     >>> results['logrank_Z']
@@ -138,7 +138,8 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
         Confidence interval (works only when methodtype='lifelines'). The default is 0.05.
     cii_lines : String, optional
         Confidence lines (works only when methodtype='lifelines'). The default is 'dense'.
-        'lifelines' (default)
+        'dense' (default)
+        'lifelines'
         'custom'
     methodtype : String, optional
         Implementation type. The default is 'lifeline'.
@@ -146,11 +147,29 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
         'line'
          None  (no lines)
     title : TYPE, optional
-        DESCRIPTION. The default is 'Survival function'.
+        The default is 'Survival function'.
 
     Returns
     -------
     None.
+
+    Examples
+    ----------
+    >>> # Import library
+    >>> import kaplanmeier as km
+    >>>
+    >>> # Example data
+    >>> df = km.example_data()
+    >>>
+    >>> # Fit
+    >>> results = km.fit(df['time'], df['Died'], df['group'])
+    >>>
+    >>> # Plot
+    >>> km.plot(results)
+    >>>
+    >>> km.plot(results, cmap='Set1', cii_lines=True, cii_alpha=0.05)
+    >>> km.plot(results, cmap=[(1, 0, 0),(0, 0, 1)])
+    >>> km.plot(results, cmap='Set1', methodtype='custom')
 
     """
     KMcoord = {}
@@ -220,28 +239,12 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
             KMcoord[i] = compute_coord(tmpdata)
 
         # Plot KM survival lines
-        plotkm(KMcoord, classlabel, cmap=class_colors, width=Param['width'], height=Param['height'], fontsize=Param['fontsize'])
+        _plotkm(KMcoord, classlabel, cmap=class_colors, width=Param['width'], height=Param['height'], fontsize=Param['fontsize'])
 
 
 # %% Compute coordinates (custom implementation)
 def compute_coord(survtimes):
-    """Compute coordinates.
-
-    Parameters
-    ----------
-    survtimes : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    h_coords : TYPE
-        DESCRIPTION.
-    v_coords : TYPE
-        DESCRIPTION.
-    lost : TYPE
-        DESCRIPTION.
-
-    """
+    """Compute coordinates."""
     h_coords=[]
     v_coords=[]
     lost=[]
@@ -267,35 +270,7 @@ def compute_coord(survtimes):
 
 # %% Part of computing coordinates (custom implementation)
 def loop(newsurv, y, h_coords, v_coords, lost):
-    """Part of computing coordinates (custom implementation).
-
-    Parameters
-    ----------
-    newsurv : TYPE
-        DESCRIPTION.
-    y : TYPE
-        DESCRIPTION.
-    h_coords : TYPE
-        DESCRIPTION.
-    v_coords : TYPE
-        DESCRIPTION.
-    lost : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    newsurv : TYPE
-        DESCRIPTION.
-    y : TYPE
-        DESCRIPTION.
-    h_coords : TYPE
-        DESCRIPTION.
-    v_coords : TYPE
-        DESCRIPTION.
-    lost : TYPE
-        DESCRIPTION.
-
-    """
+    """Part of computing coordinates (custom implementation)."""
     for j in newsurv:
         if j[1]!=1:
             lost.append([j[0], y])
@@ -310,29 +285,8 @@ def loop(newsurv, y, h_coords, v_coords, lost):
 
 
 # %% Show surival plot (custom implementation)
-def plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6):
-    """Surival plot.
-
-    Parameters
-    ----------
-    KMcoord : TYPE
-        DESCRIPTION.
-    uilabx : TYPE
-        DESCRIPTION.
-    cmap : TYPE, optional
-        DESCRIPTION. The default is 'Set1'.
-    fontsize : TYPE, optional
-        DESCRIPTION. The default is 10.
-    width : TYPE, optional
-        DESCRIPTION. The default is 10.
-    height : TYPE, optional
-        DESCRIPTION. The default is 6.
-
-    Returns
-    -------
-    None.
-
-    """
+def _plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6):
+    """Surival plot."""
     # Get unique colors for class-labels
     if 'str' in str(type(cmap)):
         class_colors=sns.color_palette(cmap, len(KMcoord))
@@ -390,24 +344,7 @@ def plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6):
 
 # %% Make class colors
 def make_class_color_names(data, labx, uilabx, cmap):
-    """Create class colors.
-
-    Parameters
-    ----------
-    data : TYPE
-        DESCRIPTION.
-    labx : TYPE
-        DESCRIPTION.
-    uilabx : TYPE
-        DESCRIPTION.
-    cmap : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    None.
-
-    """
+    """Create class colors."""
     if 'str' in str(type(cmap)):
         class_colors=sns.color_palette(cmap, len(uilabx))
     else:
@@ -431,7 +368,7 @@ def example_data():
         DESCRIPTION.
 
     """
-    curpath = os.path.dirname(os.path.abspath( __file__ ))
+    curpath = os.path.dirname(os.path.abspath(__file__))
     PATH_TO_DATA=os.path.join(curpath, 'data', 'survival_example_data.txt')
     if os.path.isfile(PATH_TO_DATA):
         df=pd.read_csv(PATH_TO_DATA, sep='\t')
