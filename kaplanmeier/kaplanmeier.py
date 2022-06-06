@@ -47,7 +47,7 @@ def fit(time_event, censoring, labx, verbose=3):
         * censoring (bool) : Censored or not
 
     Examples
-    ----------
+    --------
     >>> # Import library
     >>> import kaplanmeier as km
     >>>
@@ -106,23 +106,23 @@ def fit(time_event, censoring, labx, verbose=3):
 
 
 # %% Make plot
-def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alpha=0.05, cii_lines='dense', methodtype='lifeline', title='Survival function', full_ylim=False, y_percentage=False):
+def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alpha=0.05, cii_lines='dense', methodtype='lifeline', title=None, full_ylim=False, y_percentage=False):
     """Make plot.
 
     Parameters
     ----------
     out : dict
         Results from the fit function.
-    fontsize : int, optional
-        Font size for the graph. The default is 12.
-    savepath : String, optional
-        Path to store the figure. The default is ''.
-    width : int, optional
-        Width of the figure. The default is 10.
-    height : int, optional
-        height of the figure. The default is 6.
-    cmap : String, optional
-        Specify your own colors for each class-label or use a colormap:  https://matplotlib.org/examples/color/colormaps_reference.html. The default is 'Set1'.
+    fontsize : int (default: 12)
+        Font size for the graph.
+    savepath : String (default: '')
+        Path to store the figure.
+    width : int (default: 10)
+        Width of the figure.
+    height : int (default: 10)
+        height of the figure.
+    cmap : str (default: 'Set1')
+        Specify your own colors for each class-label or use a colormap:  https://matplotlib.org/examples/color/colormaps_reference.html.
         [(1, 0, 0),(0, 0, 1),(..)]
         'Set1'       (default)
         'Set2'       Discrete colors
@@ -134,27 +134,28 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
         'seismic'    Blue-white-red
         'Blues'      white-to-blue
         'Reds'       white-to-red
-    cii_alpha : float, optional
-        Confidence interval (works only when methodtype='lifelines'). The default is 0.05.
-    cii_lines : String, optional
-        Confidence lines (works only when methodtype='lifelines'). The default is 'dense'.
+    cii_alpha : float (default: 0.05)
+        Confidence interval (works only when methodtype='lifelines').
+    cii_lines : String (default: 'dense')
+        Confidence lines (works only when methodtype='lifelines').
         'dense' (default)
         'lifelines'
-        'custom'
-    methodtype : String, optional
-        Implementation type. The default is 'lifeline'.
+        'custom' or None
+    methodtype : str (default: 'lifeline')
+        Implementation type.
         'dense'   (dense/filled lines)
         'line'
          None  (no lines)
-    title : TYPE, optional
-        The default is 'Survival function'.
+    title : str (default: None)
+        In case of None, the logrank P-values is shown.
+        Title of the plot.
 
     Returns
     -------
     None.
 
     Examples
-    ----------
+    --------
     >>> # Import library
     >>> import kaplanmeier as km
     >>>
@@ -172,6 +173,7 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
     >>> km.plot(results, cmap='Set1', methodtype='custom')
 
     """
+    if title is None: title = ('Survival function\nLogrank P-Value = %.5f' % (out['logrank_P']))
     KMcoord = {}
     Param = {}
     Param['width'] = width
@@ -197,8 +199,7 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
             ax.set_ylim([0.0, 1.05])
         if y_percentage:
             ax.yaxis.set_major_formatter(PercentFormatter(1.0))
-        if out['logrank']!=[]:
-            plt.title('%s, Logrank Test P-Value = %.5f' % (title, out['logrank_P']))
+        plt.title(title)
 
         # Compute KM survival coordinates per class
         if cii_lines=='dense':
@@ -231,7 +232,7 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
         if Param['savepath']!='':
             savefig(fig, Param['savepath'])
 
-    if methodtype=='custom':
+    if (methodtype=='custom') or (methodtype is None):
         # Compute KM survival coordinates per class
         for i in range(0, len(out['uilabx'])):
             idx = np.where(labx==out['uilabx'][i])[0]
@@ -239,7 +240,7 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
             KMcoord[i] = compute_coord(tmpdata)
 
         # Plot KM survival lines
-        _plotkm(KMcoord, classlabel, cmap=class_colors, width=Param['width'], height=Param['height'], fontsize=Param['fontsize'])
+        _plotkm(KMcoord, classlabel, cmap=class_colors, width=Param['width'], height=Param['height'], fontsize=Param['fontsize'], title=title)
 
 
 # %% Compute coordinates (custom implementation)
@@ -285,7 +286,7 @@ def loop(newsurv, y, h_coords, v_coords, lost):
 
 
 # %% Show surival plot (custom implementation)
-def _plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6):
+def _plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6, title=None):
     """Surival plot."""
     # Get unique colors for class-labels
     if 'str' in str(type(cmap)):
@@ -337,6 +338,7 @@ def _plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6):
         ax.yaxis.set_ticks_position('left')
 
     plt.legend()
+    plt.title(title)
     plt.ylim(0, 105)
     plt.xlim(0,)
     plt.show()
