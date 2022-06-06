@@ -30,7 +30,7 @@
             <a href="index.html" class="icon icon-home"> kaplanmeier
           </a>
               <div class="version">
-                0.1.7
+                0.1.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -107,14 +107,6 @@
 <dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.example_data">
 <span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">example_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.example_data" title="Permalink to this definition"></a></dt>
 <dd><p>Create example data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>df</strong> – DESCRIPTION.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>TYPE</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -185,17 +177,17 @@ In case of patients, you would like to put 1=death as an event.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="kaplanmeier.kaplanmeier.plot">
-<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Set1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cii_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cii_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dense'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methodtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lifeline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Survival</span> <span class="pre">function'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_percentage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.plot" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">kaplanmeier.kaplanmeier.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Set1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cii_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cii_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dense'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methodtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lifeline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_percentage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaplanmeier.kaplanmeier.plot" title="Permalink to this definition"></a></dt>
 <dd><p>Make plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>out</strong> (<em>dict</em>) – Results from the fit function.</p></li>
-<li><p><strong>fontsize</strong> (<em>int</em><em>, </em><em>optional</em>) – Font size for the graph. The default is 12.</p></li>
-<li><p><strong>savepath</strong> (<em>String</em><em>, </em><em>optional</em>) – Path to store the figure. The default is ‘’.</p></li>
-<li><p><strong>width</strong> (<em>int</em><em>, </em><em>optional</em>) – Width of the figure. The default is 10.</p></li>
-<li><p><strong>height</strong> (<em>int</em><em>, </em><em>optional</em>) – height of the figure. The default is 6.</p></li>
-<li><p><strong>cmap</strong> (<em>String</em><em>, </em><em>optional</em>) – Specify your own colors for each class-label or use a colormap:  <a class="reference external" href="https://matplotlib.org/examples/color/colormaps_reference.html">https://matplotlib.org/examples/color/colormaps_reference.html</a>. The default is ‘Set1’.
+<li><p><strong>fontsize</strong> (<em>int</em><em> (</em><em>default: 12</em><em>)</em>) – Font size for the graph.</p></li>
+<li><p><strong>savepath</strong> (<em>String</em><em> (</em><em>default: ''</em><em>)</em>) – Path to store the figure.</p></li>
+<li><p><strong>width</strong> (<em>int</em><em> (</em><em>default: 10</em><em>)</em>) – Width of the figure.</p></li>
+<li><p><strong>height</strong> (<em>int</em><em> (</em><em>default: 10</em><em>)</em>) – height of the figure.</p></li>
+<li><p><strong>cmap</strong> (<em>str</em><em> (</em><em>default: 'Set1'</em><em>)</em>) – Specify your own colors for each class-label or use a colormap:  <a class="reference external" href="https://matplotlib.org/examples/color/colormaps_reference.html">https://matplotlib.org/examples/color/colormaps_reference.html</a>.
 [(1, 0, 0),(0, 0, 1),(..)]
 ‘Set1’       (default)
 ‘Set2’       Discrete colors
@@ -207,19 +199,20 @@ In case of patients, you would like to put 1=death as an event.</p></li>
 ‘seismic’    Blue-white-red
 ‘Blues’      white-to-blue
 ‘Reds’       white-to-red</p></li>
-<li><p><strong>cii_alpha</strong> (<em>float</em><em>, </em><em>optional</em>) – Confidence interval (works only when methodtype=’lifelines’). The default is 0.05.</p></li>
-<li><p><strong>cii_lines</strong> (<em>String</em><em>, </em><em>optional</em>) – Confidence lines (works only when methodtype=’lifelines’). The default is ‘dense’.
+<li><p><strong>cii_alpha</strong> (<em>float</em><em> (</em><em>default: 0.05</em><em>)</em>) – Confidence interval (works only when methodtype=’lifelines’).</p></li>
+<li><p><strong>cii_lines</strong> (<em>String</em><em> (</em><em>default: 'dense'</em><em>)</em>) – Confidence lines (works only when methodtype=’lifelines’).
 ‘dense’ (default)
 ‘lifelines’
-‘custom’</p></li>
-<li><p><strong>methodtype</strong> (<em>String</em><em>, </em><em>optional</em>) – <p>Implementation type. The default is ‘lifeline’.
+‘custom’ or None</p></li>
+<li><p><strong>methodtype</strong> (<em>str</em><em> (</em><em>default: 'lifeline'</em><em>)</em>) – <p>Implementation type.
 ‘dense’   (dense/filled lines)
 ‘line’</p>
 <blockquote>
 <div><p>None  (no lines)</p>
 </div></blockquote>
 </p></li>
-<li><p><strong>title</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – The default is ‘Survival function’.</p></li>
+<li><p><strong>title</strong> (<em>str</em><em> (</em><em>default: None</em><em>)</em>) – In case of None, the logrank P-values is shown.
+Title of the plot.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
