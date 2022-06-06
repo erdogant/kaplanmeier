@@ -362,14 +362,7 @@ def make_class_color_names(data, labx, uilabx, cmap):
 
 # %% Example data
 def example_data():
-    """Create example data.
-
-    Returns
-    -------
-    df : TYPE
-        DESCRIPTION.
-
-    """
+    """Create example data."""
     curpath = os.path.dirname(os.path.abspath(__file__))
     PATH_TO_DATA=os.path.join(curpath, 'data', 'survival_example_data.txt')
     if os.path.isfile(PATH_TO_DATA):
