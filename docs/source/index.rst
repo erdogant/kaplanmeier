@@ -4,9 +4,10 @@ kaplanmeier's documentation!
 ``kaplanmeier`` is a Python package to compute the kaplan meier curves together with the log-rank test, and make plots.
 
 
-Star is important
-======================
-If you ❤️ this project, **star** this repo at the `github page <https://github.com/erdogant/kaplanmeier/>`_!
+
+You contribution is important
+==============================
+If you ❤️ this project, **star** this repo at the `github page <https://github.com/erdogant/kaplanmeier/>`_ and have a look at the `sponser page <https://github.com/erdogant/kaplanmeier/pages/html/Documentation.html>`_!
 
 
 Github
