@@ -4,8 +4,6 @@ kaplanmeier's documentation!
 
 |python| |pypi| |docs| |stars| |LOC| |downloads_month| |downloads_total| |license| |forks| |open issues| |project status| |repo-size| |donate|
 
-.. include:: add_top.add
-
 ``kaplanmeier`` is a Python package to compute the kaplan meier curves together with the log-rank test, and make plots.
 
 

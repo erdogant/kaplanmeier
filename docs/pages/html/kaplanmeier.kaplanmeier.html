@@ -17,6 +17,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -64,7 +65,15 @@
 <li class="toctree-l1"><a class="reference internal" href="Documentation.html#github">Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Documentation.html#citing">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Coding%20quality.html">Coding quality</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API References</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API References</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#kaplanmeier.kaplanmeier.compute_coord"><code class="docutils literal notranslate"><span class="pre">compute_coord()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kaplanmeier.kaplanmeier.example_data"><code class="docutils literal notranslate"><span class="pre">example_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kaplanmeier.kaplanmeier.fit"><code class="docutils literal notranslate"><span class="pre">fit()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kaplanmeier.kaplanmeier.loop"><code class="docutils literal notranslate"><span class="pre">loop()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kaplanmeier.kaplanmeier.make_class_color_names"><code class="docutils literal notranslate"><span class="pre">make_class_color_names()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kaplanmeier.kaplanmeier.plot"><code class="docutils literal notranslate"><span class="pre">plot()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
     <a href= "genindex.html">Index</a>
@@ -93,13 +102,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <hr>
-<center>
-        <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
-        <div data-ea-publisher="erdogantgithubio" data-ea-type="text"></div>
-        <!-- <div data-ea-publisher="erdogantgithubio" data-ea-type="text" data-ea-style="fixedfooter"></div> -->
-</center>
-<hr><section id="module-kaplanmeier.kaplanmeier">
+  <section id="module-kaplanmeier.kaplanmeier">
 <span id="api-references"></span><h1>API References<a class="headerlink" href="#module-kaplanmeier.kaplanmeier" title="Permalink to this heading"></a></h1>
 <p>Compute the log-rank P-value and survival curves based on kaplan meier.</p>
 <p># Name        : kaplanmeier.py
@@ -128,7 +131,7 @@
 <li><p><strong>censoring</strong> (<em>array-like</em>) – numpy array with censoring (1=event, 0=ongoing).
 At the time you want to make inferences about durations, it is possible, likely true, that not all the death events have occured yet.
 In case of patients, you would like to put 1=death as an event.</p></li>
-<li><p><strong>labx</strong> (<em>array-like of type string</em><em> or </em><em>int</em>) – Class labels. Each class label is seperately plotted.</p></li>
+<li><p><strong>labx</strong> (<em>array-like</em><em> of </em><em>type string</em><em> or </em><em>int</em>) – Class labels. Each class label is seperately plotted.</p></li>
 <li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>(</em><em>default: 3</em><em>)</em>) – Verbosity messages.</p></li>
 </ul>
 </dd>
