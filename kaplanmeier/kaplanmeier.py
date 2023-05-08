@@ -102,7 +102,7 @@ def fit(time_event, censoring, labx, verbose=3):
     out['time_event']=time_event
     out['censoring']=censoring
 
-    return(out)
+    return out
 
 
 # %% Make plot
@@ -217,7 +217,7 @@ def plot(out,
             ax.set_ylim([0.0, 1.05])
         if y_percentage:
             ax.yaxis.set_major_formatter(PercentFormatter(1.0))
-        plt.title(title)
+        ax.set_title(title)
 
         # Compute KM survival coordinates per class
         if cii_lines=='dense':
@@ -234,7 +234,7 @@ def plot(out,
             # Fit
             kmf.fit(out['time_event'][idx], event_observed=out['censoring'][idx], label=classlabel[i], ci_labels=None, alpha=(1 - cii_alpha))
             # Plot
-            kmf.plot(ax=ax, ci_force_lines=cii_lines, color=class_colors[i], show_censors=True, legend=legend)
+            kmf.plot(ax=ax, ci_force_lines=cii_lines, color=class_colors[i], show_censors=True, legend=0)
             # Store
             kmf_all.append(kmf.fit(out['time_event'][idx], event_observed=out['censoring'][idx], label=classlabel[i], ci_labels=None, alpha=(1 - cii_alpha)))
 
@@ -246,6 +246,7 @@ def plot(out,
         ax.spines['left'].set_position(['outward', Param['fontsize']])
         #    ax.rc('font', size= Param['fontsize'])   # controls default text sizes
         #    ax.rc('axes',  labelsize = Param['fontsize'])  # fontsize of the x and y labels
+        if legend>=0: ax.legend(loc=legend, fontsize=10)
 
         if Param['savepath']!='':
             savefig(fig, Param['savepath'])
@@ -361,8 +362,8 @@ def _plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6, title
         ax.spines['left'].set_bounds(0, 100)
         ax.xaxis.set_ticks_position('bottom')
         ax.yaxis.set_ticks_position('left')
-
-    if legend>=0: plt.legend(loc=legend, fontsize=10)
+    
+    # if legend>=0: ax.legend(loc=legend, fontsize=10)
     plt.title(title)
     plt.ylim(0, 105)
     plt.xlim(0,)
