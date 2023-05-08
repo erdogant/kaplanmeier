@@ -28,7 +28,9 @@ pip install kaplanmeier
 #### Import kaplanmeier package
 
 ```python
-import kaplanmeier import km
+
+import kaplanmeier as km
+
 ```
 # 
 
