@@ -224,7 +224,7 @@ def plot(out,
             cii_lines=False
         if cii_lines=='line':
             cii_lines=True
-        if cii_lines=='' or cii_lines==None or cii_alpha==None:
+        if (cii_lines=='') or (cii_lines is None) or (cii_alpha is None):
             cii_lines=False
             cii_alpha=0
 
