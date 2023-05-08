@@ -204,7 +204,7 @@ def plot(out,
     data = np.vstack((out['time_event'], out['censoring'])).T
 
     # Make colors and legend-names for class-labels
-    [class_colors, classlabel] = make_class_color_names(data, out['labx'], out['uilabx'], cmap=cmap)
+    class_colors, classlabel = make_class_color_names(data, out['labx'], out['uilabx'], cmap=cmap)
 
     if methodtype=='lifeline':
         # Init
@@ -246,7 +246,7 @@ def plot(out,
         ax.spines['left'].set_position(['outward', Param['fontsize']])
         #    ax.rc('font', size= Param['fontsize'])   # controls default text sizes
         #    ax.rc('axes',  labelsize = Param['fontsize'])  # fontsize of the x and y labels
-        if legend>=0: ax.legend(loc=legend, fontsize=10)
+        if legend>0: ax.legend(loc=legend, fontsize=10)
 
         if Param['savepath']!='':
             savefig(fig, Param['savepath'])
@@ -362,8 +362,8 @@ def _plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6, title
         ax.spines['left'].set_bounds(0, 100)
         ax.xaxis.set_ticks_position('bottom')
         ax.yaxis.set_ticks_position('left')
-    
-    # if legend>=0: ax.legend(loc=legend, fontsize=10)
+
+    if legend>0: ax.legend(loc=legend, fontsize=10)
     plt.title(title)
     plt.ylim(0, 105)
     plt.xlim(0,)
