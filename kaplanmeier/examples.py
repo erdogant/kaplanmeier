@@ -8,7 +8,7 @@ results = km.fit(df['time'], df['Died'], df['group'])
 km.plot(results, title='Custom title text', legend=0, fontsize=4)
 km.plot(results, cmap='Set1', cii_lines=True, cii_alpha=0.05)
 km.plot(results, cmap=[(1, 0, 0),(0, 0, 1)])
-km.plot(results, cmap='Set1', methodtype='custom', title=None)
+km.plot(results, cmap='Set1', methodtype='custom', title=None, legend=4)
 results['logrank_P']
 results['logrank_Z']
 
