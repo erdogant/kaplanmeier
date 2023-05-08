@@ -106,7 +106,19 @@ def fit(time_event, censoring, labx, verbose=3):
 
 
 # %% Make plot
-def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alpha=0.05, cii_lines='dense', methodtype='lifeline', title=None, full_ylim=False, y_percentage=False):
+def plot(out,
+         fontsize=12,
+         savepath='',
+         width=10,
+         height=6,
+         cmap='Set1',
+         cii_alpha=0.05,
+         cii_lines='dense',
+         methodtype='lifeline',
+         title=None,
+         full_ylim=False,
+         y_percentage=False,
+         legend=1):
     """Make plot.
 
     Parameters
@@ -149,6 +161,12 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
     title : str (default: None)
         In case of None, the logrank P-values is shown.
         Title of the plot.
+    legend : int, default: 0
+        0 : No legend
+        1 : 'upper right'
+        2 : 'upper left'
+        3 : 'lower left'
+        4 : 'lower right'
 
     Returns
     -------
@@ -216,7 +234,7 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
             # Fit
             kmf.fit(out['time_event'][idx], event_observed=out['censoring'][idx], label=classlabel[i], ci_labels=None, alpha=(1 - cii_alpha))
             # Plot
-            kmf.plot(ax=ax, ci_force_lines=cii_lines, color=class_colors[i], show_censors=True)
+            kmf.plot(ax=ax, ci_force_lines=cii_lines, color=class_colors[i], show_censors=True, legend=legend)
             # Store
             kmf_all.append(kmf.fit(out['time_event'][idx], event_observed=out['censoring'][idx], label=classlabel[i], ci_labels=None, alpha=(1 - cii_alpha)))
 
@@ -240,7 +258,14 @@ def plot(out, fontsize=12, savepath='', width=10, height=6, cmap='Set1', cii_alp
             KMcoord[i] = compute_coord(tmpdata)
 
         # Plot KM survival lines
-        _plotkm(KMcoord, classlabel, cmap=class_colors, width=Param['width'], height=Param['height'], fontsize=Param['fontsize'], title=title)
+        _plotkm(KMcoord,
+                classlabel,
+                cmap=class_colors,
+                width=Param['width'],
+                height=Param['height'],
+                fontsize=Param['fontsize'],
+                title=title,
+                legend=legend)
 
 
 # %% Compute coordinates (custom implementation)
@@ -286,7 +311,7 @@ def loop(newsurv, y, h_coords, v_coords, lost):
 
 
 # %% Show surival plot (custom implementation)
-def _plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6, title=None):
+def _plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6, title=None, legend=1):
     """Surival plot."""
     # Get unique colors for class-labels
     if 'str' in str(type(cmap)):
@@ -337,7 +362,7 @@ def _plotkm(KMcoord, uilabx, cmap='Set1', fontsize=10, width=10, height=6, title
         ax.xaxis.set_ticks_position('bottom')
         ax.yaxis.set_ticks_position('left')
 
-    plt.legend()
+    if legend>=0: plt.legend(loc=legend, fontsize=10)
     plt.title(title)
     plt.ylim(0, 105)
     plt.xlim(0,)
