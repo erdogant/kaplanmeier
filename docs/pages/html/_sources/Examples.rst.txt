@@ -107,6 +107,17 @@ Use custom kaplanmeier method
    +----------+
 
 
+Save plot
+############################################
+
+.. code:: python
+	
+	# Save Plot
+	fig, ax = km.plot(results, cmap='Set2', savepath=r'c:/temp/fig1.png')
+	# Do not show Plot but directly save on disk
+	fig, ax = km.plot(results, cmap='Set2', savepath=r'c:/temp/fig1.png', visible=False)
+	# Increase figure resolution
+	fig, ax = km.plot(results, cmap='Set2', savepath=r'c:/temp/fig1.png', visible=False, dpi=300)
 
 
 

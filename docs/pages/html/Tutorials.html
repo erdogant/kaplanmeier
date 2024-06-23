@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Input/Output &mdash; kaplanmeier kaplanmeier documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e0179649" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=a6af5288"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -30,14 +31,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> kaplanmeier
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            kaplanmeier
           </a>
               <div class="version">
-                0.1.8
+                0.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -59,6 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Examples.html#change-colormap-and-confidence-intervals">Change colormap and confidence intervals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Examples.html#custom-colormap">Custom colormap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Examples.html#use-custom-kaplanmeier-method">Use custom kaplanmeier method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html#save-plot">Save plot</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
@@ -84,8 +90,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Input/Output</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Input/Output</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Tutorials.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -96,36 +102,36 @@
            <div itemprop="articleBody">
              
   <section id="module-kaplanmeier.kaplanmeier.fit">
-<span id="input-output"></span><h1>Input/Output<a class="headerlink" href="#module-kaplanmeier.kaplanmeier.fit" title="Permalink to this heading"></a></h1>
+<span id="input-output"></span><h1>Input/Output<a class="headerlink" href="#module-kaplanmeier.kaplanmeier.fit" title="Link to this heading"></a></h1>
 <p>Compute the log-rank P-value and survival curves based on kaplan meier.</p>
 <dl class="field-list simple">
-<dt class="field-odd">param time_event</dt>
+<dt class="field-odd">param time_event<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Numpy array with survival-time in years/months/days (not a datetime!)</p>
 </dd>
-<dt class="field-even">type time_event</dt>
+<dt class="field-even">type time_event<span class="colon">:</span></dt>
 <dd class="field-even"><p>Float.</p>
 </dd>
-<dt class="field-odd">param censoring</dt>
+<dt class="field-odd">param censoring<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy array with censoring (1=event, 0=ongoing).
 At the time you want to make inferences about durations, it is possible, likely true, that not all the death events have occured yet.
 In case of patients, you would like to put 1=death as an event.</p>
 </dd>
-<dt class="field-even">type censoring</dt>
+<dt class="field-even">type censoring<span class="colon">:</span></dt>
 <dd class="field-even"><p>array-like</p>
 </dd>
-<dt class="field-odd">param labx</dt>
+<dt class="field-odd">param labx<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Class labels. Each class label is seperately plotted.</p>
 </dd>
-<dt class="field-even">type labx</dt>
+<dt class="field-even">type labx<span class="colon">:</span></dt>
 <dd class="field-even"><p>array-like of type string or int</p>
 </dd>
-<dt class="field-odd">param verbose</dt>
+<dt class="field-odd">param verbose<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Verbosity messages.</p>
 </dd>
-<dt class="field-even">type verbose</dt>
+<dt class="field-even">type verbose<span class="colon">:</span></dt>
 <dd class="field-even"><p>int, (default: 3)</p>
 </dd>
-<dt class="field-odd">returns</dt>
+<dt class="field-odd">returns<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p>logrank_P (float) : P-value</p></li>
 <li><p>logrank_Z (float) : Z-score</p></li>
@@ -136,27 +142,27 @@ In case of patients, you would like to put 1=death as an event.</p>
 <li><p>censoring (bool) : Censored or not</p></li>
 </ul>
 </dd>
-<dt class="field-even">rtype</dt>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict()</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import library</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">kaplanmeier</span> <span class="k">as</span> <span class="nn">km</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">example_data</span><span class="p">()</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Fit</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Died&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">])</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Plot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">cii_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cii_alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">km</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set1&#39;</span><span class="p">,</span> <span class="n">methodtype</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">)</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;logrank_P&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;logrank_Z&#39;</span><span class="p">]</span>
 </pre></div>
