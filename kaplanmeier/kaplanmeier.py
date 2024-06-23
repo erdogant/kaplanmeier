@@ -104,13 +104,24 @@ def fit(time_event, censoring, labx, verbose=3):
 
     return out
 
+# %%
+def init_figure(ax, dpi, figsize, fig, fontsize):
+    """Initialize figure."""
+    if ax is None:
+        fig = plt.figure(figsize=figsize, dpi=dpi)
+        # Adjust global font settings
+        plt.rcParams['font.size'] = np.maximum(fontsize, 1)  # Set an appropriate font size
+        ax = fig.add_subplot(111)
+
+    return fig, ax
 
 # %% Make plot
 def plot(out,
          fontsize=12,
          savepath='',
-         width=10,
-         height=6,
+         figsize=(10, 6),
+         width=None, # will be depricted in later versions. Use figsize instead.
+         height=None, # will be depricted in later versions. Use figsize instead.
          cmap='Set1',
          cii_alpha=0.05,
          cii_lines='dense',
@@ -118,7 +129,13 @@ def plot(out,
          title=None,
          full_ylim=False,
          y_percentage=False,
-         legend=1):
+         legend=1,
+         visible=True,
+         dpi=100,  # Dots per inch for the figure.
+         fig=None,
+         ax=None,
+         verbose=3,
+         ):
     """Make plot.
 
     Parameters
@@ -129,6 +146,10 @@ def plot(out,
         Font size for the graph.
     savepath : String (default: '')
         Path to store the figure.
+    figsize : tuple, optional
+        Figure size. The default is (10, 6).
+    dpi : int (default: 100)
+        Dots per inch for the figure.
     width : int (default: 10)
         Width of the figure.
     height : int (default: 10)
@@ -167,6 +188,10 @@ def plot(out,
         2 : 'upper left'
         3 : 'lower left'
         4 : 'lower right'
+    figsize : tuple, optional
+        Figure size. The default is (15,10).
+    visible : Bool, default: True
+        Visible status of the Figure. When False, figure is created on the background.
 
     Returns
     -------
@@ -191,14 +216,15 @@ def plot(out,
     >>> km.plot(results, cmap='Set1', methodtype='custom')
 
     """
-    if title is None: title = ('Survival function\nLogrank P-Value = %.5f' % (out['logrank_P']))
+    fig, ax = None, None
+    if title is None: title = ('Survival function\nLogrank P-Value = %.3e' % (out['logrank_P']))
     KMcoord = {}
     Param = {}
-    Param['width'] = width
-    Param['height'] = height
-    Param['fontsize'] = fontsize
-    Param['savepath'] = savepath
-    labx=out['labx']
+    labx = out['labx']
+
+    if width is not None or height is not None:
+        if verbose >= 1: print(f'Parameters "width" and "height" will be depricated in future versions. Please use figsize=({width}, {height}) instead.')
+        figsize = (width, height)
 
     # Combine data and gather class labels
     data = np.vstack((out['time_event'], out['censoring'])).T
@@ -210,9 +236,12 @@ def plot(out,
         # Init
         kmf_all=[]
 
+        # Bootup figure
+        fig, ax = init_figure(ax, dpi, figsize, fig, fontsize)
+
         # Startup figure
-        fig = plt.figure(figsize=(Param['width'], Param['height']))
-        ax = fig.add_subplot(111)
+        # fig = plt.figure(figsize=(Param['width'], Param['height']))
+        # ax = fig.add_subplot(111)
         if full_ylim:
             ax.set_ylim([0.0, 1.05])
         if y_percentage:
@@ -240,21 +269,21 @@ def plot(out,
 
         add_at_risk_counts(*kmf_all, ax=ax)
 
-        ax.tick_params(axis='x', length=15, width=1, direction='out', labelsize=Param['fontsize'])
-        ax.tick_params(axis='y', length=15, width=1, direction='out', labelsize=Param['fontsize'])
-        ax.spines['bottom'].set_position(['outward', Param['fontsize']])
-        ax.spines['left'].set_position(['outward', Param['fontsize']])
-        #    ax.rc('font', size= Param['fontsize'])   # controls default text sizes
-        #    ax.rc('axes',  labelsize = Param['fontsize'])  # fontsize of the x and y labels
+        ax.tick_params(axis='x', length=15, width=1, direction='out', labelsize=fontsize)
+        ax.tick_params(axis='y', length=15, width=1, direction='out', labelsize=fontsize)
+        ax.spines['bottom'].set_position(['outward', fontsize])
+        ax.spines['left'].set_position(['outward', fontsize])
+        #    ax.rc('font', size= fontsize)   # controls default text sizes
+        #    ax.rc('axes',  labelsize = fontsize)  # fontsize of the x and y labels
         if legend>0: ax.legend(loc=legend, fontsize=10)
 
-        if Param['savepath']!='':
-            savefig(fig, Param['savepath'])
+        if savepath != '':
+            fig.savefig(savepath)
 
-    if (methodtype=='custom') or (methodtype is None):
+    if (methodtype == 'custom') or (methodtype is None):
         # Compute KM survival coordinates per class
         for i in range(0, len(out['uilabx'])):
-            idx = np.where(labx==out['uilabx'][i])[0]
+            idx = np.where(labx == out['uilabx'][i])[0]
             tmpdata = data[idx, :].tolist()
             KMcoord[i] = compute_coord(tmpdata)
 
@@ -262,11 +291,18 @@ def plot(out,
         _plotkm(KMcoord,
                 classlabel,
                 cmap=class_colors,
-                width=Param['width'],
-                height=Param['height'],
-                fontsize=Param['fontsize'],
+                width=figsize[0],
+                height=figsize[1],
+                fontsize=fontsize,
                 title=title,
                 legend=legend)
+
+    if visible:
+        plt.show()
+    else:
+        plt.close(fig)
+
+    return fig, ax
 
 
 # %% Compute coordinates (custom implementation)
