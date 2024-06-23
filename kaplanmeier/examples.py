@@ -13,7 +13,11 @@ df = km.example_data()
 # Fit
 results = km.fit(df['time'], df['Died'], df['group'])
 # Plot
+fig, ax = km.plot(results)
+fig, ax = km.plot(results, ax=ax)
+
 km.plot(results, title='Custom title text', legend=1)
+
 km.plot(results, title='Custom title text', legend=2)
 km.plot(results, cmap='Set1', cii_lines=True, cii_alpha=0.05)
 km.plot(results, cmap=[(1, 0, 0),(0, 0, 1)])
