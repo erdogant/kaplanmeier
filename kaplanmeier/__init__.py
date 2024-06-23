@@ -6,7 +6,7 @@ from kaplanmeier.kaplanmeier import (
 
 __author__ = 'Erdogan Tasksen'
 __email__ = 'erdogant@gmail.com'
-__version__ = '0.1.9'
+__version__ = '0.2.0'
 
 # module level doc-string
 __doc__ = """
