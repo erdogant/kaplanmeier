@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kaplanmeier"
+dynamic = ["version"]
+authors = [{ name = "Erdogan Taskesen", email = "erdogant@gmail.com" },]
+description = "kaplanmeier is a Python library tp create survival curves using kaplanmeier, the log-rank test and making plots."
+readme = "README.md"
+requires-python = ">=3"
+license = { file = "LICENSE" }
+keywords = ["Python", ""]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ['matplotlib','numpy','pandas','seaborn','lifelines']
+
+[project.urls]
+Homepage = "https://erdogant.github.io/kaplanmeier"
+Download = "https://github.com/erdogant/kaplanmeier/archive/{version}.tar.gz"
+
+[tool.setuptools]
+packages = ["kaplanmeier"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = { attr = "kaplanmeier.__version__" }
